@@ -1,17 +1,27 @@
-
+import { useState } from 'react';
 import React from 'react';
+import RenderProducts from './RenderProducts';
 
 
-export default function NavBar({data}) {
+function NavBar({data}) {
   
-  const names = data.map((obj)=> {
-    return <p key={obj.id}>{obj.name}</p>
-  })
+    const names = data.map((obj)=> {
+      return <p key={obj.id}>{obj.name}</p>
+    })
 
-  return (
-   <div className='sidenav'>
-    <h4>{names}</h4>
-   </div>
-  );
+    const [showproducts, setShowProducts] = useState(false)
+
+    const toggleproducts = (e) => {
+        setShowProducts(showproducts => !showproducts)
+    } 
+    
+    return (
+    <div>
+      <div className='sidenav'>
+        <h4 onClick={toggleproducts}>{names}</h4>
+      </div>
+        {showproducts ? null : <RenderProducts/>}
+     </div>   
+      );
 }
-
+export default NavBar
