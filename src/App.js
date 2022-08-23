@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import NavBar from './NavBar'
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  const [data , SetData] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:9292/products')
+    .then(infor => infor.json())
+    .then(infor => SetData(infor))
+  },[])
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar data={data}/>
     </div>
   );
 }
