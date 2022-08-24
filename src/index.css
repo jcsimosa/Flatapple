@@ -11,14 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-.storesList {
-  display: inline-block;
-  width: 150px;
-  padding: 10px;
-  margin: 0 6px 10px;
-  background: blue;
-  text-decoration: none;
-  color: white;
-};
