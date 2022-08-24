@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ .card {
+  margin: 1rem;
+  box-shadow:  0 7px 0 #ddd;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+  list-style: none;
+  flex-wrap: wrap; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.card .image {
+  flex: 33.33%;
+  padding: 5px;
+  height: 225px;
+  position: relative;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.card .image .price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.25rem;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-bottom-right-radius: 5px;
+  background: white;
+}
+.card .image img {
+  max-width: 300px;
+  max-height: 225px;
+  width: auto;
+  height: auto;
+}
+.card .details {
+  padding: 0.5rem;
+}
+
+.card .details strong {
+  font-family: serif;
+  font-size: 1rem;
+}

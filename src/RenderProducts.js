@@ -10,15 +10,12 @@ function RenderProducts(){
         .then (resp => setProducts(resp))
     },[]) 
 
-    const Arrayproducts = products.map ((obj) => {
+    const Arrayproducts = products.map((obj) => {
         return (
-        <span key={obj.id}>
-        {obj.name}
-        
-        {`price ${obj.price}`}
-        <br/>
-
-        </span>) 
+        <div key={obj.id}>
+            {obj.name}
+            {`price ${obj.price}`}
+        </div>) 
     })
     
     return (

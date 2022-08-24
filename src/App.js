@@ -19,12 +19,15 @@ function App() {
     .then(infor => SetData(infor))
   },[])
 
- 
+  const createNewStore = (obj)=>{
+    SetData(data => [...data,obj])
+  }
+
   return (
     <div className="App">
       <NavBar data={data}/>
       <Switch>
-      <Route exact path='/Home' ><Home /></Route>
+      <Route exact path='/Home' ><Home data={data} createNewStore={createNewStore}/></Route>
 				<Route exact path='/FlatAppleChicago' ><FlatAppleChicago/></Route>
 				<Route exact path='/FlatAppleNewYork'><FlatAppleNewYork /></Route>
       </Switch>

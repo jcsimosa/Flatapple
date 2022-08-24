@@ -2,6 +2,8 @@
 export default function FlatAppleNewYork() {
     
     return (
-        <div>FlatApple New York</div>
+        <div>
+            FlatApple New York
+        </div>
     )
 }
