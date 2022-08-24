@@ -8,7 +8,7 @@ function StoresList({ storeData }) {
       <Link to={`/stores/${store.id}`}
             className="storesList"
       >
-        Check inventory at {store.id.name}
+        Check inventory at {store.name}
       </Link>
     </li>
   ));

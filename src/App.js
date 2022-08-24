@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import FlatAppleChicago from './FlatAppleChicago';
 import FlatAppleNewYork from './FlatAppleNewYork';
 import StoresPage from './StoresPage';
+import StoreCard from './StoreCard';
 import Home from './Home';
 
 
@@ -33,6 +34,10 @@ function App() {
 
         <Route exact path="/stores" >
           <StoresPage storeData={storeData} />
+        </Route>
+
+        <Route exact path="/stores/:id">
+          <StoreCard storeData={storeData} />
         </Route>
         
 {/* 
