@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import RenderProducts from './RenderProducts';
+import { NavLink } from 'react-router-dom';
 
 
 function NavBar({data}) {
@@ -8,19 +9,15 @@ function NavBar({data}) {
     const names = data.map((obj)=> {
       return <p key={obj.id}>{obj.name}</p>
     })
-
-    const [showproducts, setShowProducts] = useState(false)
-
-    const toggleproducts = (e) => {
-        setShowProducts(showproducts => !showproducts)
-    } 
     
     return (
     <div>
       <div className='sidenav'>
-        <h4 onClick={toggleproducts}>{names}</h4>
+       <h4><NavLink to= '/home'> Home </NavLink></h4>
+       <h4><NavLink to= '/FlatAppleChicago'>FlatApple Chicago</NavLink></h4>
+       <h4><NavLink to= '/FlatAppleNewYork'>FlatApple New York</NavLink></h4>
       </div>
-        {showproducts ? null : <RenderProducts/>}
+        
      </div>   
       );
 }

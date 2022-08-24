@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import NavBar from './NavBar'
 import './App.css';
 import RenderProducts from './RenderProducts';
+import FlatAppleChicago from './FlatAppleChicago';
+import { Switch, Route } from 'react-router-dom';
+import FlatAppleNewYork from './FlatAppleNewYork';
+import Home from './Home';
 
 
 
@@ -15,10 +19,17 @@ function App() {
     .then(infor => SetData(infor))
   },[])
 
-  
+ 
   return (
     <div className="App">
       <NavBar data={data}/>
+      <Switch>
+      <Route exact path='/Home' ><Home /></Route>
+				<Route exact path='/FlatAppleChicago' ><FlatAppleChicago/></Route>
+				<Route exact path='/FlatAppleNewYork'><FlatAppleNewYork /></Route>
+      </Switch>
+    
+      
     </div>
   );
 }
