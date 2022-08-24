@@ -1,7 +1,6 @@
-
 export default function Home() {
     
     return (
-        <div>Home</div>
+        <div>This is the content based on what's in Home.js file!!!</div>
     )
 }
