@@ -20,7 +20,9 @@ function StoresPage({ storeData }) {
         we can use the current URL from the `match` object as part of the path;
         this will generate a url like "/stores/:storeId"
       */}
-
+      <Route exact path="/stores/:id">
+        <StoreCard storeData={storeData} />
+      </Route>
 
 
       {/* Adding code to show a message to the user to select a movie if they haven't yet */}
