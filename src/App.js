@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
-import NavBar from './NavBar'
-import './App.css';
-import RenderProducts from './RenderProducts';
-import FlatAppleChicago from './FlatAppleChicago';
 import { Switch, Route } from 'react-router-dom';
+import './App.css';
+import NavBar from './NavBar'
+import FlatAppleChicago from './FlatAppleChicago';
 import FlatAppleNewYork from './FlatAppleNewYork';
+import StoresPage from './StoresPage';
+import StoreCard from './StoreCard';
 import Home from './Home';
 
 
 
 function App() {
 
-  const [data , SetData] = useState([])
+  const [storeData , setStoreData] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:9292/stores')
-    .then(infor => infor.json())
-    .then(infor => SetData(infor))
+    .then(resp => resp.json())
+    .then(data => setStoreData(data))
   },[])
 
   const createNewStore = (obj)=>{
@@ -25,14 +26,35 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar data={data}/>
+      
+      <NavBar />
+
       <Switch>
-      <Route exact path='/Home' ><Home data={data} createNewStore={createNewStore}/></Route>
-				<Route exact path='/FlatAppleChicago' ><FlatAppleChicago/></Route>
-				<Route exact path='/FlatAppleNewYork'><FlatAppleNewYork /></Route>
+
+        <Route exact path="/" >
+          <Home data={data} createNewStore={createNewStore} />
+        </Route>
+
+        <Route exact path="/stores" >
+          <StoresPage storeData={storeData} />
+        </Route>
+
+        <Route exact path="/stores/:id">
+          <StoreCard storeData={storeData} />
+        </Route>
+        
+{/* 
+        <Route exact path="/FlatAppleChicago">
+          <FlatAppleChicago />
+        </Route>
+        
+        <Route exact path="/FlatAppleNewYork">
+          <FlatAppleNewYork />
+        </Route> */}
+
+
       </Switch>
     
-      
     </div>
   );
 }

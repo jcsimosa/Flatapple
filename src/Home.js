@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 export default function Home({createNewStore}) {
     
     const [storeName, setStoreName] = useState('')
@@ -16,9 +17,11 @@ export default function Home({createNewStore}) {
     })
     .then(r => r.json())
     .then(r => createNewStore(r))
+
     
     }
     return (
+
         <div>
             <h1>Home</h1>
             <label/> Create New Store
@@ -27,6 +30,7 @@ export default function Home({createNewStore}) {
                 <input type="submit" value='Create'></input>
             </form>
         </div>
+
 
     )
     
