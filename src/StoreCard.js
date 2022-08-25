@@ -17,11 +17,7 @@ function StoreCard( {storeData} ) {
     
   return (
     <div>
-      {/* And here we access the `storeId` stored in `params` to render 
-      information about the selected store */}
       <h3>{store.name}</h3>
-      {/* <h3>{storeData[params.storeId].name}</h3> */}
-
     </div>
   );
 }

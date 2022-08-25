@@ -33,11 +33,11 @@ function App() {
       <Switch>
 
         <Route exact path="/" >
-          <Home createNewStore={createNewStore} />
+          <Home />
         </Route>
 
         <Route exact path="/stores" >
-          <StoresPage storeData={storeData} />
+          <StoresPage storeData={storeData} createNewStore={createNewStore} />
         </Route>
 
         <Route exact path="/stores/:id">
