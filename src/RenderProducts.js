@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./Product.card";
-function RenderProducts({ store }) {
+function RenderProducts({ store, products, getProducts }) {
 
-    useEffect(() => {
-        getProducts()
-    }, [])
+    // useEffect(() => {
+    //     getProducts()
+    // }, [])
 
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        fetch('http://localhost:9292/products')
-            .then(resp => resp.json())
-            .then(resp => setProducts(resp))
-    }
+    // const getProducts = () => {
+    //     fetch('http://localhost:9292/products')
+    //         .then(resp => resp.json())
+    //         .then(resp => setProducts(resp))
+    // }
 
     const arrayProducts = products.filter((obj) => {
         return (
