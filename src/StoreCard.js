@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import RenderProducts from "./RenderProducts";
 
 function StoreCard( {storeData} ) {
 
@@ -14,10 +14,11 @@ function StoreCard( {storeData} ) {
         .then(data => setStore(data))
       },[id])
 
-    
+    console.log(store.name)
   return (
     <div>
       <h3>{store.name}</h3>
+      < RenderProducts store={store}/>
     </div>
   );
 }
