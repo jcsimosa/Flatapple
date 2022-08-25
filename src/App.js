@@ -20,7 +20,10 @@ function App() {
     .then(data => setStoreData(data))
   },[])
 
- 
+  const createNewStore = (obj)=>{
+    SetData(data => [...data,obj])
+  }
+
   return (
     <div className="App">
       
@@ -29,7 +32,7 @@ function App() {
       <Switch>
 
         <Route exact path="/" >
-          <Home />
+          <Home data={data} createNewStore={createNewStore} />
         </Route>
 
         <Route exact path="/stores" >
@@ -48,6 +51,7 @@ function App() {
         <Route exact path="/FlatAppleNewYork">
           <FlatAppleNewYork />
         </Route> */}
+
 
       </Switch>
     
