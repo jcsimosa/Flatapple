@@ -44,7 +44,7 @@ function RenderProducts({ store }) {
 
     const productInfo = arrayProducts.map((obj) => {
         return (
-            < ProductCard name = {obj.name} price = {obj.price} inventory = {obj.inventory} obj = {obj} handleClick = {handleClick} updateInventory = {updateInventory} key = {obj.id} handleDelete = {handleDelete} />)
+            < ProductCard id={obj.id} name = {obj.name} price = {obj.price} inventory = {obj.inventory} obj = {obj} handleClick = {handleClick} category = {obj.category} updateInventory = {updateInventory} key = {obj.id} handleDelete = {handleDelete} />)
         })
 
    
