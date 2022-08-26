@@ -28,12 +28,11 @@ export default function ProductCard({ name, price, inventory, category, obj, han
 
     return (
         <div>
-            <span className="data">
+            <span className="card">
                 Name: {obj.name}<br/>
                 Price: ${obj.price}<br/>
                 Inventory: {obj.inventory}<br/>
                 Category: {obj.category}<br/>
-                <button onClick={() => handleClick(obj.id)}>Delete Product</button>
                 <form id="form" onSubmit={handleUpdate}>
                     <input placeholder={name} onChange={(e) => setNewName(e.target.value)}></input>
                     <input placeholder={`Price: $${price}`} onChange={(e) => setNewPrice(e.target.value)}></input>
@@ -41,6 +40,7 @@ export default function ProductCard({ name, price, inventory, category, obj, han
                     <input placeholder={category} onChange={(e) => setNewCategory(e.target.value)}></input>
                     <input value="Update" type="submit" />
                 </form>
+                <button onClick={() => handleClick(obj.id)}>Delete Product</button>
                 <br />
             </span>
         </div>

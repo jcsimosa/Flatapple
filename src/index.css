@@ -53,3 +53,31 @@ code {
   margin-top: 200px;
   width: 150px;
 }
+
+
+.card {
+  margin: 1rem;
+  border: solid black;
+  padding: 15px 10px;
+  margin-left: 15%;
+  float: left;
+  flex-wrap: wrap;
+  width: calc(33% - 2rem);
+  font-size: 120%;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  line-height: 1; 
+}
+
+
+@media (min-width: 1024px) {
+.card {
+  width: calc(25% - 2rem);
+}
+}
+
+@media (min-width: 1200px) {
+.card {
+  width: calc(20% - 2rem);
+}
+}

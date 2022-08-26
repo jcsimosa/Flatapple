@@ -30,6 +30,7 @@ function CreateProducts ({id, products, getProducts}) {
         .then(res => res.json())
         .then(newProductobj => newProduct(newProductobj))
         getProducts();
+        e.target.reset()
     }
 
     return (
