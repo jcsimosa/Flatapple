@@ -33,17 +33,17 @@ export default function ProductCard({ name, price, inventory, category, obj, han
 
     return (
         <div>
-            <span>
-                {obj.name},
-                {obj.price},
-                {obj.inventory},
-                {obj.category},
+            <span className="data">
+                Name: {obj.name},
+                Price: ${obj.price},
+                Inventory: {obj.inventory},
+                Category: {obj.category},
                 <form id="form" onSubmit={HandleUpdate}>
                     <input placeholder={name} onChange={(e) => setNewName(e.target.value)}></input>
                     <input placeholder={`Price: ${price}`} onChange={(e) => setNewPrice(e.target.value)}></input>
                     <input placeholder={`Inventory: ${inventory}`} onChange={(e) => setNewInventory(e.target.value)}></input>
                     <input placeholder={category} onChange={(e) => setNewCategory(e.target.value)}></input>
-                    <input value="submit" type="submit" />
+                    <input value="Update" type="submit" />
                 </form>
                 <button onClick={() => handleClick(obj.id)}>Delete Product</button>
                 <br />

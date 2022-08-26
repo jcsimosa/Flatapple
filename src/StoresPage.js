@@ -31,7 +31,7 @@ function StoresPage({ storeData, createNewStore }) {
       <h1>Create New Store</h1>
       <form onSubmit={handleStore}>
         <input placeholder="Name of the Store" onChange={(e)=>setStoreName(e.target.value)}></input>
-        <input type="submit" value='Create'></input>
+        <input type="submit" value='Create' className="glow-on-hover"></input>
       </form>
       
       <Route exact path="/stores/:id">

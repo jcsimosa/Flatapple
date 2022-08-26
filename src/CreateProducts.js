@@ -41,7 +41,7 @@ const CreateProduct = (e)=> {
     return (
     <div>
         <label /> Create a New Product
-        <form onSubmit={CreateProduct}>
+        <form onSubmit={CreateProduct} className='form'>
             <input placeholder="name" onChange={(e)=>setName(e.target.value)}></input>
             <input placeholder="price" onChange={(e)=>setPrice(e.target.value)}></input>
             <input placeholder="inventory" onChange={(e)=>setInventory(e.target.value)}></input>

@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar'
-import FlatAppleChicago from './FlatAppleChicago';
-import FlatAppleNewYork from './FlatAppleNewYork';
 import StoresPage from './StoresPage';
 import StoreCard from './StoreCard';
 import Home from './Home';
