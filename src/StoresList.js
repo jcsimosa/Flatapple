@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 function StoresList({ storeData }) {
 
   const renderStores = storeData.map((store) => (

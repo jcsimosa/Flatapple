@@ -7,7 +7,6 @@ import StoreCard from './StoreCard';
 import Home from './Home';
 
 
-
 function App() {
 
   const [storeData , setStoreData] = useState([])
@@ -21,7 +20,6 @@ function App() {
   const createNewStore = (obj) => {
     setStoreData( storeData => [...storeData, obj] )
   }
-
  
   return (
     <div className="App">
@@ -41,20 +39,12 @@ function App() {
         <Route exact path="/stores/:id">
           <StoreCard storeData={storeData} />
         </Route>
-        
-{/* 
-        <Route exact path="/FlatAppleChicago">
-          <FlatAppleChicago />
-        </Route>
-        
-        <Route exact path="/FlatAppleNewYork">
-          <FlatAppleNewYork />
-        </Route> */}
 
       </Switch>
     
     </div>
   );
 }
+
 
 export default App;

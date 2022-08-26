@@ -5,11 +5,9 @@ import CreateProducts from "./CreateProducts";
 
 function StoreCard( {storeData} ) {
 
-
     const [ store, setStore ] = useState([])
 
     const {id} = useParams();
-
 
   useEffect(() => {
       getProducts()
@@ -23,18 +21,16 @@ function StoreCard( {storeData} ) {
           .then(resp => setProducts(resp))
   }
 
-
-
     useEffect(() => {
         fetch(`http://localhost:9292/stores/${id}`)
         .then(resp => resp.json())
         .then(data => setStore(data))
       },[id])
 
-    console.log(store.name)
   return (
     <div>
-      <h3>{store.name}</h3>
+      <h1><u>{store.name}</u></h1>
+      <br />
       < CreateProducts id={id} products={products} getProducts={getProducts} />
       < RenderProducts store={store} products={products} getProducts={getProducts} />
     </div>
